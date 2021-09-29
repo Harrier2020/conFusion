@@ -165,7 +165,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm py-3 align-self-center">
-<!--
+<!-- Original Tooltips code
                    <a role="button" class="btn btn-primary btn-block nav-link"
                         data-toggle="tooltip" data-html="true"
                         title="Or Call us at <hr><strong>+852 12345678</strong>"
@@ -227,6 +227,14 @@
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
+                        <div class="btn-group" id="carouselButton">
+                            <button class="btn btn-danger btn-sm" id="carousel-pause">
+                                <span class="fa fa-pause"></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" id="carousel-play">
+                                <span class="fa fa-play"></span>
+                            </button>
+                        </div>                        
                     </div>           
                 </div>
             </div>
@@ -389,11 +397,23 @@
  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
- <script>
+<!-- JS for Tooltips 
      $(document).ready(function(){
          $('[data-toggle="tooltip"]').tooltip();
      });
  </script>
+ --> 
+<script>
+    $(document).ready(function(){
+        $("#mycarousel").carousel( { interval: 2000 } );
+        $("#carousel-pause").click(function(){
+            $("#mycarousel").carousel('pause');
+        });
+        $("#carousel-play").click(function(){
+            $("#mycarousel").carousel('cycle');
+        });
+    });
+</script>
 </body>
 
 </html>
