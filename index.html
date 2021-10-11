@@ -29,9 +29,15 @@
                 <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
             </ul>
-            <span class="navbar-text">
+<!-- button trigger loginModal using data-toggle
+           <span class="navbar-text">
                 <a data-toggle="modal" data-target="#loginModal">
                     <span class="fa fa-sign-in"></span> Login</a>
+            </span>
+-->             
+<!-- button trigger loginModal using JS -->
+            <span class="navbar-text btn" id="loginButton" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login
             </span>
         </div>
 
@@ -41,8 +47,8 @@
 <div id="ReserveModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg" role="content">
         <div class="modal-content">
-            <div class="modal-header bg-warning">
-                <h4 class="modal-title text-white">Reserve a Table</h4>
+            <div class="modal-header">
+                <h4 class="modal-title">Reserve a Table</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;
                 </button>
             </div>
@@ -170,9 +176,14 @@
                         data-toggle="tooltip" data-html="true"
                         title="Or Call us at <hr><strong>+852 12345678</strong>"
                         data-placement="bottom" href="#InReserve">Reserve Table</a>
---> 
-                    <a role="button" class="btn btn-primary btn-block nav-link"
+-->
+<!-- Modal button using data-* 
+<a role="button" class="btn btn-primary btn-block nav-link"
                         data-toggle="modal" data-target="#ReserveModal">Reserve Table</a>
+-->
+<!-- Modal button using JS -->
+                    <button id="ReserveModalButton" class="btn-primary"
+                        data-target="#ReserveModal">Reserve Table</button>
 
                 </div>
             </div>
@@ -444,7 +455,17 @@
                     $("#carouselButton").children("span").removeClass('fa-play');
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
-            });        
+            });
+<!-- activate modal from Login -->
+$("#loginButton").click(function(){
+            $("#loginModal").modal("toggle");
+        });                    
+
+        <!-- activate modal from Reserve Button -->
+$("#ReserveModalButton").click(function(){
+            $("#ReserveModal").modal("toggle");
+        });                    
+                
 
     });
 </script> 

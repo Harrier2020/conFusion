@@ -39,6 +39,7 @@ body{
 .navbar-dark {
      background-color: $background-dark;
 }
+
 .tab-content {
     border-left: 1px solid $lt-gray;
     border-right: 1px solid $lt-gray;
@@ -63,4 +64,20 @@ body{
     position: absolute;
     bottom: 0px;
     z-index: 1;
+}
+
+.modal { 
+    .modal-header{
+        background:$background-dark;
+        color: white;
+        .close {
+            color: floralwhite;
+        }
+    }
+    .modal-body{
+        background:$background-pale;
+        .card-body{
+            background: $background-pale;
+        }
+    }
 }
