@@ -419,6 +419,9 @@
  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+<!--  move all scripts for tooltips and Carousel to the scripts.js file -->
+<script src="js/scripts.js"></script> 
+
 <!-- JQuery sript for Tooltips 
 <script>
     $(document).ready(function(){
@@ -440,35 +443,6 @@
 </script>
  end Two Buttons -->
 
- <!-- JQuery script for Carousel One Button Method -->
- <script>
-    $(document).ready(function(){
-        $("#mycarousel").carousel( { interval: 2000 } );
-        $("#carouselButton").click(function(){
-                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass('fa-pause');
-                    $("#carouselButton").children("span").addClass('fa-play');
-                }
-                else if ($("#carouselButton").children("span").hasClass('fa-play')){
-                    $("#mycarousel").carousel('cycle');
-                    $("#carouselButton").children("span").removeClass('fa-play');
-                    $("#carouselButton").children("span").addClass('fa-pause');                    
-                }
-            });
-<!-- activate modal from Login -->
-$("#loginButton").click(function(){
-            $("#loginModal").modal("toggle");
-        });                    
-
-        <!-- activate modal from Reserve Button -->
-$("#ReserveModalButton").click(function(){
-            $("#ReserveModal").modal("toggle");
-        });                    
-                
-
-    });
-</script> 
 </body>
 
 </html>
